@@ -7,7 +7,7 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            
         } #lyrics{
             position:fixed;
             bottom:50px;
@@ -17,6 +17,7 @@
             color:white;
             font-family:Arial;
             text-shadow:0 0 20px black;
+            z-index:1;
         }
         video {
             
@@ -49,10 +50,11 @@
 <audio id="bgMusic" loop playsinline>
     <source src="japanese01.mp3" type="audio/mpeg">
 </audio>
-<div id="lyrics" style="font-size:30px; margin-top:20px;">
+    <h1> Time Goes Faster</h1>
+<id="lyrics" style="font-size:30px; margin-top:20px;">
     <div id="lyrics">
     Lyrics will appear here...</div>
-</div>
+</id>
 
 <script src="script.js"></script>
 
@@ -64,8 +66,9 @@ let started = false;
 function playMusic() {
     if (!started) {
         started = true;
+        if(music){
         music.volume = 0.5; // 50% volume (optional)
-        music.play().catch(err => console.log(err));
+        music.play().catch(err => console.log(err)); }
     }
 }
 
@@ -74,7 +77,7 @@ document.addEventListener("click", playMusic);
 document.addEventListener("touchstart", playMusic);
 document.addEventListener("keydown", playMusic);
 </script>
-<h1> Time Goes Faster</h1>
+
 
 </body>
 </html>
