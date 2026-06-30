@@ -1,5 +1,5 @@
-const song = document.getElementById("japanese01");
-const lyrics = document.getElementById("japanese01");
+const song = document.getElementById("bgMusic");
+const lyrics = document.getElementById("lyrics");
 
 const lyricData = [
     {time:20, text:"Mada kono sekai wa"},
