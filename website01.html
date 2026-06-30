@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOKing page</title> 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        } #lyrics{
+            position:fixed;
+            bottom:50px;
+            width:100%;
+            text-align:center;
+            font-size:40px;
+            color:white;
+            font-family:Arial;
+            text-shadow:0 0 20px black;
+        }
+        video {
+            
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            object-fit: cover;
+            .content{
+    position:relative;
+    color:white;
+    text-align:center;
+    margin-top:200px;
+}
+        }
+        h1{
+            position:fixed;
+            top:5px;
+            width:100%;
+            text-align:center;
+            font-size:40px;
+            color:rgb(219, 91, 157);
+            font-family:Arial;
+            text-shadow:0 0 20px rgb(32, 31, 31);
+        }
+    </style>
+
+</head>
+<body>
+<video autoplay muted loop id="myVideo">
+    <source src="anime03.mp4" type="video/mp4">
+</video>
+<audio id="bgMusic" loop>
+    <source src="japanese01.mp3" type="audio/mpeg">
+</audio>
+<div id="lyrics" style="font-size:30px; margin-top:20px;">
+    <div id="lyrics">
+    Lyrics will appear here...</div>
+</div>
+
+<script src="script.js"></script>
+
+</div>
+<script>
+const music = document.getElementById("bgMusic");
+let started = false;
+
+function playMusic() {
+    if (!started) {
+        started = true;
+        music.volume = 0.5; // 50% volume (optional)
+        music.play().catch(err => console.log(err));
+    }
+}
+
+// Start music on the first user interaction
+document.addEventListener("click", playMusic);
+document.addEventListener("touchstart", playMusic);
+document.addEventListener("keydown", playMusic);
+</script>
+<h1> Time Goes Faster</h1>
+
+</body>
+</html>
+
